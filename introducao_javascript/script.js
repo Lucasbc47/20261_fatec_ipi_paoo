@@ -1,5 +1,59 @@
+//funções
+//arrow function
+const dobrar = n => 2 * n
+console.log(dobrar(6))
+const triplicar = (n) => {
+    console.log("Vamos calcular o triplo de " + n)
+    return 3 * n
+}
+console.log(triplicar(5))
+//escreva uma função que decida se um valor é par ou não
 
+// const hello = nome => console.log('Oi, ' + nome)
+// hello('Ana')
+// const hello = () => {console.log('Oi')}
+// hello()
+// const dobrar = function(n){
+//     return 2 * n
+// }
+// console.log(dobrar(2))
+// console.log(dobrar(undefined))
 
+// const triplicar = function(n = 5){
+//     return 3 * n
+// }
+// const resultado = triplicar(10)
+// console.log(resultado)
+// console.log(triplicar(undefined))
+
+// const produto = function(a, b){
+//     console.log(a * b)
+// }
+// produto(4, 3)
+// function somar(a, b){
+//     return a + b
+// }
+// console.log(somar(2, 3))
+
+//functions e arrow functions
+// function hello(){
+//     console.log('Oi')
+// }
+// hello(undefined)
+// function hello(nome){
+//     console.log('Oi, ' + nome)
+// }
+// hello('Ana')
+// v1 = []
+// console.log(v1.length)
+// v1[0] = 3.4
+// console.log(v1.length)
+// v1[10] = 'abc'
+// console.log(v1.length)
+// console.log(v1)
+// for(let i = 0; i < v1.length; i++){
+//     console.log(v1[i])
+// }
 //comparação por igualdade
 //Java: ==, Python: ==
 //Javascript: == ou ===(usamos apenas esse)
