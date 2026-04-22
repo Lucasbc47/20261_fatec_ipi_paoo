@@ -1,3 +1,4 @@
+const axios = require('axios')
 const express = require('express')
 const app = express()
 app.use(express.json()) //função middleware
@@ -19,10 +20,14 @@ app.get('/lembretes', (req, res) => {
   }
 }
 */
-app.post('/lembretes', (req, res) => {
+app.post('/lembretes', async (req, res) => {
   id++
   const texto = req.body.texto
   lembretes[id] = {id, texto}
+  await axios.post('http://localhost:10000/eventos', {
+    tipo: 'LembreteCriado',
+    dados: {id, texto}
+  })
   res.json(lembretes[id])
 })
 
