@@ -66,9 +66,13 @@ app.get('/lembretes/:id/observacoes', (req, res) => {
   res.json(observacoesPorLembrete[req.params.id] || [])
 })
 
-app.post('/eventos', (req, res) => {
-  const evento = req.body
-  console.log(evento)
+app.post('/eventos', async (req, res) => {
+  try{
+    const evento = req.body
+    console.log(evento)
+    funcoes[evento.tipo](evento.dados)
+  }
+  catch(e){}
   res.end()
 })
 

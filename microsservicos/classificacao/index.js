@@ -18,11 +18,14 @@ const funcoes = {
   }
 }
 //criar endpoint post /eventos
-app.post('/eventos', (req, res) => {
-  //usar o mapa de funções para tratar o evento
-  const evento = req.body
-  console.log(evento)
-  funcoes[evento.tipo](evento.dados)
+app.post('/eventos', async (req, res) => {
+  try{
+    //usar o mapa de funções para tratar o evento
+    const evento = req.body
+    console.log(evento)
+    funcoes[evento.tipo](evento.dados)
+  }
+  catch(e){}
   res.end()
 })
 //subir o serviço na porta 7000

@@ -6,20 +6,38 @@ const axios = require('axios')
 const app = express()
 app.use(express.json())
 
-app.post('/eventos', (req, res) => {
+const eventos = []
+
+app.post('/eventos', async (req, res) => {
   //extrair o corpo da requisição
   const evento = req.body
+  eventos.push(evento)
   console.log(evento)
-  //enviar para o mss na porta 4000
-  axios.post('http://localhost:4000/eventos', evento)
-  //enviar para o mss na porta 5000
-  axios.post('http://localhost:5000/eventos', evento)
-  //enviar para o mss na porta 6000
-  axios.post('http://localhost:6000/eventos', evento) 
-  //enviar para o mss na porta 7000
-  axios.post('http://localhost:7000/eventos', evento)
+  try{
+    //enviar para o mss na porta 4000
+    await axios.post('http://localhost:4000/eventos', evento)
+  }catch(e){}
+  try{
+    //enviar para o mss na porta 5000
+    await axios.post('http://localhost:5000/eventos', evento)
+  }
+  catch(e){}
+  try{
+    //enviar para o mss na porta 6000
+    await axios.post('http://localhost:6000/eventos', evento) 
+  }
+  catch(e){}
+  try{
+    //enviar para o mss na porta 7000
+    await axios.post('http://localhost:7000/eventos', evento)
+  }
+  catch(e){}
   //encerrar com código 200
   res.status(200).end()
+})
+
+app.get('/eventos', (req, res) => {
+  res.json(eventos)
 })
 
 //colocar o barramento em execução na porta 10000

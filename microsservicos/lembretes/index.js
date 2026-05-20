@@ -34,9 +34,12 @@ app.post('/lembretes', async (req, res) => {
 //fazer um endpoint para receber eventos
 //ele apenas exibe num console.log o evento recebido
 //e termina
-app.post('/eventos', (req, res) => {
-  const evento = req.body
-  console.log(evento)
+app.post('/eventos', async (req, res) => {
+  try{
+    const evento = req.body
+    console.log(evento)
+  }
+  catch(e){}
   res.end()
 })
 
