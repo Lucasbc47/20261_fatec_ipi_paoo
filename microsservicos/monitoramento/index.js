@@ -47,4 +47,4 @@ app.get('/status', async (req, res) => {
 app.post('/eventos', (req, res) => res.end())
 
 const port = 8000
-app.listen(port, () => console.log(`Monitoramento. Porta ${port}.`))
+app.listen(port, () => console.log(`(monitoramento): http://localhost:${port}`))

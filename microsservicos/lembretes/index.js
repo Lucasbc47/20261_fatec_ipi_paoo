@@ -37,5 +37,5 @@ app.post("/eventos", async (req, res) => {
 
 const port = 4000;
 app.listen(port, () => {
-  console.log(`Lembretes. Porta ${port}.`);
+  console.log(`(lembretes): http://localhost:${port}`);
 });

@@ -36,5 +36,5 @@ app.get("/eventos", (req, res) => {
 
 const port = 10000;
 app.listen(port, () => {
-  console.log(`Barramento. Porta ${port}.`);
+  console.log(`(barramento): http://localhost:${port}`);
 });

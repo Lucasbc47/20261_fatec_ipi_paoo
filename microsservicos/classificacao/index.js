@@ -28,4 +28,4 @@ app.post("/eventos", async (req, res) => {
 });
 
 const port = 7000;
-app.listen(port, () => console.log(`Classificação. Porta ${port}`));
+app.listen(port, () => console.log(`(classificacao): http://localhost:${port}`));

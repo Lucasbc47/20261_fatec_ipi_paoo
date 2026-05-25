@@ -64,4 +64,4 @@ app.post('/eventos', async (req, res) => {
 })
 
 const port = 9000
-app.listen(port, () => console.log(`Moderação. Porta ${port}.`))
+app.listen(port, () => console.log(`(moderacao): http://localhost:${port}`))
