@@ -16,12 +16,14 @@ const funcoes = {
   },
 };
 
+app.get('/', (req, res) => res.end());
+
 app.post("/eventos", async (req, res) => {
   try {
     const evento = req.body;
     console.log(evento);
     funcoes[evento.tipo](evento.dados);
-  } catch (e) {}
+  } catch (e) { }
   res.end();
 });
 
