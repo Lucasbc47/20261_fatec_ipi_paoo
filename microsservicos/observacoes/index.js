@@ -7,6 +7,11 @@ app.use(express.json());
 const observacoesPorLembrete = {};
 
 const funcoes = {
+  ObservacaoBloqueada: (observacao) => {
+    const observacoes = observacoesPorLembrete[observacao.lembreteId]
+    const obsParaAtualizar = observacoes.find((o) => o.id === observacao.id)
+    obsParaAtualizar.status = 'bloqueado'
+  },
   ObservacaoClassificada: (observacao) => {
     const observacoes = observacoesPorLembrete[observacao.lembreteId];
     const obsParaAtualizar = observacoes.find((o) => o.id === observacao.id);
