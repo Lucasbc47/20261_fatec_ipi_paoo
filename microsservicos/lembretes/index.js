@@ -4,6 +4,13 @@ const app = express();
 app.use(express.json());
 const lembretes = {};
 let id = 0;
+
+const funcoes = {
+  LembreteBloqueado: (lembrete) => {
+    lembretes[lembrete.id].status = "bloqueado";
+  },
+};
+
 app.get("/lembretes", (req, res) => {
   res.json(lembretes);
 });
@@ -22,8 +29,9 @@ app.post("/lembretes", async (req, res) => {
 app.post("/eventos", async (req, res) => {
   try {
     const evento = req.body;
+    funcoes[evento.tipo](evento.dados);
     console.log(evento);
-  } catch (e) {}
+  } catch (e) { }
   res.end();
 });
 
